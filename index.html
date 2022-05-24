@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            background-image: url("https://images.unsplash.com/photo-1583779791512-eeccdee5c5dd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWNkb25hbGRzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60 ");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+           background-attachment: fixed;
+            /* opacity: 0.4; */
+            /* filter:alpha(opacity=40); */
+           /* background-position:  top center;  */
+         
+            /* width:100%; */
+            
+            /* z-index:0.1; */
+           
+        }
+        #Image {
+            justify-content: center;
+            margin:auto;
+            margin-top: 100px;
+            border: 3px solid gray;
+            height: 380px;
+            width:500px;
+            background-color:wheat;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        }
+        #img{
+            display:inline-block;
+            margin:auto;
+    
+            height: 312px;
+            width:100%;
+            gap: 20px;
+
+        }
+        #h1{
+
+           float:right;
+           margin-top:-53px;
+           margin-bottom: 10px;
+           margin-right: 110px;
+        }
+        #msg{
+            margin-top: 50px;
+            margin-bottom :-40px;
+            text-align:center;
+            font-size:30px;
+            font-family: sans-serif;
+            font-weight:550;
+            color: red;
+
+        }
+        button{
+            height:40px;
+            width:120px;
+            background: tomato;
+            color:yellow;
+            font-size: 18px;
+            font-weight:540;
+            border:0px;
+            margin-left: 20px;
+            border-radius:10px;
+        }
+        #Foods{
+            height:41px;
+            width:200px;
+            margin-left: 20px;
+            background: tomato;
+            color: whitesmoke;
+            font-size: 18px;
+            font-weight:540;
+            border:0px;
+            border-radius:10px;
+        }
+        #order{
+            font-size:25px;
+            font-family:sans-serif;
+            font-weight:660;
+            margin-top: 18px;
+            text-align:center;
+            margin-right: 150px;
+        }
+    </style>
+</head>
+<body>
+    
+     <div id="MC_Donald">
+       <div id="detail">
+           <select id="Foods">
+               <option value="Burger">Burger</option>
+               <option value="Fries">Fries</option>
+               <option value="Chicken">Chicken</option>
+               <option value="Kabab">Kabab</option>
+               <option value="Mutton">Mutton</option>
+           </select>
+           <button onclick="MCfood()">Order Food</button>
+       </div>
+        <div id = "msg">
+
+        </div>
+       <div id="Image">
+           
+         <div id >
+             <h2  id = "order">Your Order ID :</h2>
+             <h1 id = "h1"></h1>
+
+         </div>
+       </div>
+     </div>
+</body>
+</html>
+
+<script>
+      function get(id){
+        return document.getElementById(id).value;
+      }
+
+     
+        
+      function MCfood(){    
+
+          let food = get("Foods");
+          let status="open"
+          let random = Math.random() *10000
+          setTimeout(function(){
+            //document.querySelector("#Image").innerHTML=null
+         
+        if (food=="Burger" && status=="open"){
+           let url ="https://media.istockphoto.com/photos/junk-food-homemade-beef-burgers-on-vintage-wooden-background-picture-id1302436326?b=1&k=20&m=1302436326&s=170667a&w=0&h=MvSjb8R4lOJT_NteIiZxfIoZvXIkKucRUVeViFBLVN4="
+            let image = document.createElement("img")
+            let div1 = document.createElement("div")
+            div1.append(image)
+             image.setAttribute("src",url)
+             image.setAttribute("id" , "img")
+             document.querySelector("#Image").append(div1)
+
+         }
+        else if(food=="Fries" && status=="open"){
+            let url ="https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZnJpZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"  
+            let image = document.createElement("img")
+            let div1 = document.createElement("div")
+            div1.append(image)
+             image.setAttribute("src",url)
+             image.setAttribute("id" , "img")
+             document.querySelector("#Image").append(div1)
+         }
+         else if(food=="Chicken" && status=="open"){
+           let url ="https://media.istockphoto.com/photos/roast-chicken-quarters-picture-id1133229175?b=1&k=20&m=1133229175&s=170667a&w=0&h=cUSP4tP8jwUcsM_hlDMvglAow7s-w4ZyDGD8lLSqYTA="  
+           let image = document.createElement("img")
+            let div1 = document.createElement("div")
+            div1.append(image)
+             image.setAttribute("src",url)
+             image.setAttribute("id" , "img")
+             document.querySelector("#Image").append(div1)
+        }
+        else if(food=="Kabab" && status=="open"){
+           let url ="https://media.istockphoto.com/photos/grilled-chicken-on-bamboo-skewers-picture-id521040304?b=1&k=20&m=521040304&s=170667a&w=0&h=J6h0EtumhD_YAKax2r2PIc_kO1sZ5UyZ1gymFEbQ55o="   
+           let image = document.createElement("img")
+            let div1 = document.createElement("div")
+            div1.append(image)
+             image.setAttribute("src",url)
+             image.setAttribute("id" , "img")
+             document.querySelector("#Image").append(div1)
+        }
+        else if(food=="Mutton" && status=="open"){
+           let url ="https://images.unsplash.com/photo-1559203244-78de52adba0e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bXV0dG9ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"  
+           let image = document.createElement("img")
+            let div1 = document.createElement("div")
+            div1.append(image)
+             image.setAttribute("src",url)
+             image.setAttribute("id" , "img")
+             document.querySelector("#Image").append(div1)
+        }
+        
+       },random)
+    
+       // console.log(food,url);
+      
+         let foodpromise = new Promise(function(resolve,reject){
+           
+            if (status === "close")
+            {
+                reject("shop is close come next day");
+                document.querySelector("#msg").innerText= "shop is close come next day"    
+            }
+            else
+            {
+                setTimeout(function(){
+                  resolve(food); 
+                  document.querySelector("#msg").innerText= "Welcome to Our Shop!  We are Pleased to Serve You"
+                   
+        //           if (food=="Burger" && status=="open"){
+        //    let url ="https://media.istockphoto.com/photos/junk-food-homemade-beef-burgers-on-vintage-wooden-background-picture-id1302436326?b=1&k=20&m=1302436326&s=170667a&w=0&h=MvSjb8R4lOJT_NteIiZxfIoZvXIkKucRUVeViFBLVN4="
+        //     let image = document.createElement("img")
+        //     let div1 = document.createElement("div")
+        //     div1.append(image)
+        //      image.setAttribute("src",url)
+        //      image.setAttribute("id" , "img")
+        //      document.querySelector("#Image").append(div1)
+
+        //  }
+        // else if(food=="Fries" && status=="open"){
+        //     let url ="https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZnJpZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"  
+        //     let image = document.createElement("img")
+        //     let div1 = document.createElement("div")
+        //     div1.append(image)
+        //      image.setAttribute("src",url)
+        //      image.setAttribute("id" , "img")
+        //      document.querySelector("#Image").append(div1)
+        //  }
+        //  else if(food=="Chicken" && status=="open"){
+        //    let url ="https://media.istockphoto.com/photos/roast-chicken-quarters-picture-id1133229175?b=1&k=20&m=1133229175&s=170667a&w=0&h=cUSP4tP8jwUcsM_hlDMvglAow7s-w4ZyDGD8lLSqYTA="  
+        //    let image = document.createElement("img")
+        //     let div1 = document.createElement("div")
+        //     div1.append(image)
+        //      image.setAttribute("src",url)
+        //      image.setAttribute("id" , "img")
+        //      document.querySelector("#Image").append(div1)
+        // }
+        // else if(food=="Kabab" && status=="open"){
+        //    let url ="https://media.istockphoto.com/photos/grilled-chicken-on-bamboo-skewers-picture-id521040304?b=1&k=20&m=521040304&s=170667a&w=0&h=J6h0EtumhD_YAKax2r2PIc_kO1sZ5UyZ1gymFEbQ55o="   
+        //    let image = document.createElement("img")
+        //     let div1 = document.createElement("div")
+        //     div1.append(image)
+        //      image.setAttribute("src",url)
+        //      image.setAttribute("id" , "img")
+        //      document.querySelector("#Image").append(div1)
+        // }
+        // else if(food=="Mutton" && status=="open"){
+        //    let url ="https://images.unsplash.com/photo-1559203244-78de52adba0e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bXV0dG9ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"  
+        //    let image = document.createElement("img")
+        //     let div1 = document.createElement("div")
+        //     div1.append(image)
+        //      image.setAttribute("src",url)
+        //      image.setAttribute("id" , "img")
+        //      document.querySelector("#Image").append(div1)
+        // }
+
+
+                },random)
+            }          
+         });
+     
+           
+         foodpromise.then(function(success){
+          console.log(`${success} is ready to serve`)
+        });
+
+
+        foodpromise.catch(function(error){
+            console.log("error:",error)
+
+        });
+
+        setTimeout(function(){
+       if (status=="open"){
+
+           document.querySelector("#h1").innerText = Math.floor(Math.random()*100000)
+       }
+    },random)
+    
+      }
+     
+
+
+
+    //  function pappus(){
+    //      this.image = url;
+    //      this.name = food;
+
+
+    //  }
+    //  let fooddata =new pappus()
+    //  console.log(fooddata)
+</script>
+
+<!-- When a user clicks on order food, create a promise that will resolve after
+ random seconds.
+
+Once the promise is resolved, show the image of the food in the
+ center and show the order id on the top right corner. -->
+
